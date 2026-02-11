@@ -1,33 +1,20 @@
-// Function to fetch ticket data from Bounce Events API
+// Function to fetch ticket data from your ticket software API
 async function fetchTicketData() {
     const ticketStatusDiv = document.getElementById('ticket-status');
     
     try {
-        // IMPORTANT: Replace with your Bounce Events API credentials
-        // You'll need:
-        // 1. Your Bounce Events API key (from your dashboard)
-        // 2. Your event ID
-        
-        const BOUNCE_API_KEY = 'YOUR_BOUNCE_API_KEY'; // Replace with your API key
-        const EVENT_ID = 'YOUR_EVENT_ID'; // Replace with your event ID
-        
-        const response = await fetch(`https://api.bounceevents.com/v1/events/${EVENT_ID}/tickets`, {
-            headers: {
-                'Authorization': `Bearer ${BOUNCE_API_KEY}`,
-                'Content-Type': 'application/json'
-            }
-        });
+        // MANUAL UPDATE: Update these numbers from your Bounce Events dashboard
+        // Simply replace the values below whenever you check your ticket sales
+        const data = {
+            ticketsSold: 0,
+            ticketsAvailable: 116,
+        };
 
-        if (!response.ok) {
-            throw new Error(`API error: ${response.status}`);
-        }
-
-        const data = await response.json();
         displayTicketData(data);
     } catch (error) {
         console.error('Error fetching ticket data:', error);
         ticketStatusDiv.innerHTML = `
-            <p style="color: #c9534d;">Unable to load ticket information. Please check back later.</p>
+            <p style="color: #c9534d;">Unable to load ticket information. Please try again later.</p>
         `;
     }
 }
