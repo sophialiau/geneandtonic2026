@@ -86,7 +86,7 @@ body {
 }
 
 .hero-logo {
-    height: 3000px;
+    height: 80vh;
     width: auto;
     margin-bottom: 3rem;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .tagline {
-    font-size: 1.8rem;
+    font-size: 4rem;
     margin-bottom: 3rem;
     font-style: italic;
     opacity: 0.95;
